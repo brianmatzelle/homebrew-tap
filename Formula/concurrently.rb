@@ -1,15 +1,13 @@
 class Concurrently < Formula
   desc "Concurrent subagent workflow TUI — like Claude Code, but parallel"
-  homepage "https://github.com/brianmatzelle/concurrently"
-  url "https://github.com/brianmatzelle/concurrently/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ab9ed7e9f9978c911299adf9f81eb5cb5e8739b33adf550b79e2465e3b750798"
+  homepage "https://github.com/brianmatzelle/concurrently-releases"
+  url "https://github.com/brianmatzelle/concurrently-releases/releases/download/v0.1.1/concurrently-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
+  sha256 "b3f32509c1f4d3701265eee1ecac6d9a8e7fc3b4814b371adbf73d2fbbb97f6d"
+  version "0.1.1"
   license "MIT"
 
-  depends_on "rust" => :build
-  depends_on "openssl"
-
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "concurrently"
   end
 
   test do
