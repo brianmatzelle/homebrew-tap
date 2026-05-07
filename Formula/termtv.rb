@@ -20,7 +20,8 @@ class Termtv < Formula
   end
 
   def install
-    bin.install "termtv"
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"termtv"
   end
 
   test do
