@@ -1,12 +1,10 @@
 class ManimMcp < Formula
   include Language::Python::Virtualenv
 
-  desc "Manim MCP server + always-on terminal stream pane for coding agents"
-  homepage "https://github.com/brianmatzelle/manim-mcp"
-  # Local-dev URL; swap for the GitHub release tarball when publishing:
-  #   url "https://github.com/brianmatzelle/manim-mcp/releases/download/v0.1.0/manim_mcp-0.1.0.tar.gz"
-  url "file:///home/cowboy/projects/active/manim-mcp/dist/manim_mcp-0.1.0.tar.gz"
-  sha256 "91406e4691296d715ed05ae17eeee68b2df3cafea9be8b4daab7c14dabc17eeb"
+  desc "Manim MCP server + always-on terminal stream pane (the banim CLI)"
+  homepage "https://github.com/brianmatzelle/banim"
+  url "https://github.com/brianmatzelle/banim/releases/download/v0.2.0/manim_mcp-0.2.0.tar.gz"
+  sha256 "d7234435d60bc0a45f560d2db77995a896f9fece531add44ee39b7cd0f0adf29"
   license "MIT"
 
   depends_on "python-setuptools" => :build
@@ -20,16 +18,16 @@ class ManimMcp < Formula
 
   def caveats
     <<~EOS
-      Create ~/.config/manim-mcp and register the MCP server with your
-      harness (Claude Code / OpenCode):
-        manim-mcp init
+      Set up ~/.config/manim-mcp, optional LaTeX, and register the MCP
+      server with your harness (Claude Code / OpenCode):
+        banim init
 
       Then keep a stream pane open in tmux:
-        tmux split-window -h 'manim-mcp watch'
+        tmux split-window -h 'banim stream'
     EOS
   end
 
   test do
-    assert_match "manim-mcp #{version}", shell_output("#{bin}/manim-mcp --version")
+    assert_match "banim #{version}", shell_output("#{bin}/banim --version")
   end
 end
