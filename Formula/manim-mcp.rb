@@ -3,8 +3,8 @@ class ManimMcp < Formula
 
   desc "Manim MCP server + always-on terminal stream pane (the banim CLI)"
   homepage "https://github.com/brianmatzelle/banim"
-  url "https://github.com/brianmatzelle/banim/releases/download/v0.2.0/manim_mcp-0.2.0.tar.gz"
-  sha256 "d7234435d60bc0a45f560d2db77995a896f9fece531add44ee39b7cd0f0adf29"
+  url "https://github.com/brianmatzelle/banim/releases/download/v0.2.1/manim_mcp-0.2.1.tar.gz"
+  sha256 "429003e4e69b4d4ae37ff43f6982f1144b83ed715465413e8b676251b3935f47"
   license "MIT"
 
   depends_on "python-setuptools" => :build
