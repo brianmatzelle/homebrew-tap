@@ -3,8 +3,8 @@ class ManimMcp < Formula
 
   desc "Manim MCP server + always-on terminal stream pane (the banim CLI)"
   homepage "https://github.com/brianmatzelle/banim"
-  url "https://github.com/brianmatzelle/banim/releases/download/v0.2.2/manim_mcp-0.2.2.tar.gz"
-  sha256 "3ea5755e35005315b0b52ea5d4f693b7996de2dc2faedb9ca0181cb721ec4c9c"
+  url "https://github.com/brianmatzelle/banim/releases/download/v0.3.0/manim_mcp-0.3.0.tar.gz"
+  sha256 "6092684e6baf5b1769778a7d8cc19aac9928361698b43c2104a8914eb9e02dee"
   license "MIT"
 
   depends_on "python-setuptools" => :build
@@ -22,8 +22,12 @@ class ManimMcp < Formula
       server with your harness (Claude Code / OpenCode):
         banim init
 
-      Then keep a stream pane open in tmux:
-        tmux split-window -h 'banim stream'
+      Then keep a stream pane open beside your agent:
+        banim stream
+
+      It renders real pixels on kitty, Ghostty and WezTerm, and falls back
+      to sub-cell glyphs anywhere else — tmux included, so prefer a native
+      split if you want the pixels.
     EOS
   end
 
